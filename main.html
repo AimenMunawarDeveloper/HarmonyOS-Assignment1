@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Team page for a HarmonyOS and HTML assignment, featuring Suzhou, China.">
+	<title>Crimson Canals | Suzhou Team Page</title>
+	<style>
+		:root {
+			--lacquer: #7f1717;
+			--vermilion: #c63c2f;
+			--scarlet: #e0523f;
+			--ink: #241414;
+			--paper: #fff8f1;
+			--blush: #f5ded1;
+			--gold: #d9a441;
+			--shadow: 0 16px 40px rgba(89, 24, 18, 0.14);
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--paper);
+			font-family: Georgia, "Times New Roman", serif;
+			line-height: 1.65;
+		}
+
+		h1, h2, h3, p, ul, ol { margin-top: 0; }
+
+		h1, h2, h3 { line-height: 1.15; }
+
+		/* Shared selector: headings and captions use a common typographic treatment. */
+		h2, figcaption {
+			color: var(--lacquer);
+			letter-spacing: 0.02em;
+		}
+
+		a {
+			color: var(--lacquer);
+			font-weight: 700;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 3px;
+			transition: color 180ms ease, background-color 180ms ease;
+		}
+		a:hover, a:focus-visible {
+			color: #fff;
+			background-color: var(--vermilion);
+			outline: none;
+		}
+
+		.site-shell { overflow: hidden; }
+
+		.hero {
+			position: relative;
+			min-height: 78vh;
+			display: flex;
+			align-items: flex-end;
+			padding: clamp(2rem, 6vw, 6rem) clamp(1.2rem, 7vw, 7rem);
+			color: #fffaf2;
+			background:
+				linear-gradient(115deg, rgba(83, 9, 12, 0.94), rgba(174, 38, 29, 0.68)),
+				url("https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=2000&q=85") center/cover;
+		}
+
+		.hero::after {
+			content: "";
+			position: absolute;
+			inset: auto 0 0;
+			height: 24%;
+			background: linear-gradient(transparent, rgba(67, 8, 10, 0.5));
+		}
+
+		.hero-content, .main-nav { position: relative; z-index: 1; }
+
+		.hero-content { max-width: 850px; }
+
+		.eyebrow {
+			margin-bottom: 1rem;
+			color: #ffd98b;
+			font-size: 0.82rem;
+			font-weight: 700;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+		}
+
+		.hero h1 {
+			max-width: 760px;
+			margin-bottom: 1.25rem;
+			font-size: clamp(3rem, 8vw, 7.5rem);
+			letter-spacing: -0.04em;
+		}
+
+		.hero p { max-width: 650px; font-size: clamp(1.05rem, 2vw, 1.35rem); }
+
+		.main-nav {
+			position: absolute;
+			top: 1.25rem;
+			right: clamp(1.2rem, 7vw, 7rem);
+			left: clamp(1.2rem, 7vw, 7rem);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.brand-mark {
+			color: #fff;
+			font-size: 1.15rem;
+			text-decoration: none;
+		}
+
+		.main-nav ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 0.5rem 1.25rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.main-nav a { color: #fffaf2; text-decoration: none; }
+
+		.section {
+			width: min(1180px, calc(100% - 2.4rem));
+			margin: 0 auto;
+			padding: clamp(3.5rem, 7vw, 7rem) 0;
+		}
+
+		.section-heading { max-width: 760px; margin-bottom: 2rem; }
+
+		.section-heading h2 { font-size: clamp(2rem, 4vw, 3.8rem); }
+
+		.section-heading p { color: #614747; font-size: 1.08rem; }
+
+		.team-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.2rem;
+		}
+
+		.member-card {
+			padding: 1.6rem;
+			border: 1px solid #e7bbae;
+			border-top: 7px solid var(--vermilion);
+			background: #fffdf9;
+			box-shadow: var(--shadow);
+		}
+		.member-card:nth-child(2) { border-top-color: var(--gold); }
+		.member-card:nth-child(3) { border-top-color: var(--lacquer); }
+
+		.member-number {
+			color: var(--vermilion);
+			font-size: 0.8rem;
+			font-weight: 700;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+		}
+
+		.member-card h3 { margin: 0.6rem 0 0.15rem; font-size: 1.45rem; }
+		.student-id { margin-bottom: 1.3rem; color: #795252; font-family: Consolas, monospace; }
+
+		.member-card a {
+			display: inline-block;
+			padding: 0.25rem 0.5rem;
+			border: 1px solid #d9a49b;
+			font-size: 0.92rem;
+		}
+
+		.suzhou-intro {
+			display: grid;
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: clamp(1.5rem, 5vw, 4rem);
+			align-items: start;
+		}
+
+		.lead-letter::first-letter { color: var(--vermilion); float: left; padding: 0.05em 0.1em 0 0; font-size: 4rem; line-height: 0.8; }
+		.city-story p { max-width: 700px; }
+		.city-story strong { color: var(--lacquer); }
+
+		.fact-list { display: grid; gap: 0.8rem; margin: 0; padding: 0; list-style: none; }
+		.fact-list li { padding: 0.85rem 1rem; border-left: 4px solid var(--scarlet); background: var(--blush); }
+		.fact-list li::before { content: "朱 "; color: var(--lacquer); font-weight: 700; }
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			gap: 1rem;
+			margin-top: 2.5rem;
+		}
+
+		figure { margin: 0; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+		figure:nth-child(1) { grid-column: span 7; }
+		figure:nth-child(2) { grid-column: span 5; }
+		figure:nth-child(3) { grid-column: span 5; }
+		figure:nth-child(4) { grid-column: span 7; }
+
+		figure a { display: block; line-height: 0; }
+		figure img { width: 100%; height: 300px; display: block; object-fit: cover; transition: transform 300ms ease; }
+		figure:hover img { transform: scale(1.04); }
+		figcaption { padding: 0.85rem 1rem; font-weight: 700; line-height: 1.3; }
+
+		.data-band { background: var(--lacquer); color: #fff8f1; }
+		.data-band h2 { color: #ffd98b; }
+
+		.table-wrap { overflow-x: auto; }
+		table { width: 100%; min-width: 620px; border-collapse: collapse; background: #fff8f1; color: var(--ink); }
+		caption { padding: 0.8rem; color: #ffd98b; font-size: 1.2rem; font-weight: 700; text-align: left; }
+		th, td { padding: 0.85rem 1rem; border: 1px solid #d99a8f; text-align: left; }
+		th { background: var(--scarlet); color: #fff; }
+		tbody tr:nth-child(even) { background: #f8e4db; }
+
+		.explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+		.resource-card { padding: 1.3rem; border: 1px solid #e4b7a9; background: #fffdf9; }
+		.resource-card h3 { color: var(--lacquer); }
+		.resource-card ul { padding-left: 1.2rem; }
+
+		.topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+		.topic-card { overflow: hidden; border: 1px solid #e4b7a9; background: #fffdf9; box-shadow: var(--shadow); }
+		.topic-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; }
+		.topic-card > a { display: block; line-height: 0; }
+		.topic-card img { width: 100%; height: 230px; display: block; object-fit: cover; transition: transform 300ms ease; }
+		.topic-card:hover img { transform: scale(1.04); }
+		.topic-copy { padding: 1.35rem 1.5rem 1.5rem; }
+		.topic-copy h3 { margin: 0.45rem 0 0.6rem; color: var(--lacquer); font-size: 1.7rem; }
+		.topic-copy p { color: #614747; }
+		.topic-copy ul { margin: 0 0 1.1rem; padding-left: 1.2rem; }
+		.topic-copy a { font-size: 0.92rem; }
+
+		.assignment-note {
+			margin-top: 2rem;
+			padding: 1rem 1.2rem;
+			border-left: 5px solid var(--gold);
+			background: #fff0c9;
+		}
+
+		footer { padding: 2rem 1.2rem; background: #3b1114; color: #fce5d7; text-align: center; }
+		footer a { color: #ffd98b; }
+
+		@media (max-width: 820px) {
+			.hero { min-height: 70vh; }
+			.main-nav { align-items: flex-start; flex-direction: column; }
+			.main-nav ul { justify-content: flex-start; }
+			.team-grid, .explore-grid, .suzhou-intro, .topic-grid { grid-template-columns: 1fr; }
+			.suzhou-intro { gap: 2rem; }
+			.topic-card:last-child { grid-column: auto; display: block; }
+			figure:nth-child(n) { grid-column: span 12; }
+		}
+
+		@media (max-width: 560px) {
+			.hero h1 { font-size: 3.4rem; }
+			.hero { min-height: 86vh; }
+			.main-nav ul { gap: 0.35rem 0.7rem; font-size: 0.9rem; }
+			.section { width: min(100% - 1.5rem, 1180px); }
+			figure img { height: 220px; }
+		}
+	</style>
+</head>
+<body>
+	<div class="site-shell">
+		<header class="hero" id="top">
+			<nav class="main-nav" aria-label="Primary navigation">
+				<a class="brand-mark" href="#top">朱丹赤 · TEAM 01</a>
+				<ul>
+					<li><a href="#team">Team</a></li>
+					<li><a href="#suzhou">Suzhou</a></li>
+					<li><a href="#details">Details</a></li>
+					<li><a href="#resources">Explore</a></li>
+				</ul>
+			</nav>
+			<div class="hero-content">
+				<p class="eyebrow">HarmonyOS and Its Applications · Assignment 1</p>
+				<h1>Exploring Suzhou</h1>
+				<p>For this assignment, we explore Suzhou, a historic city in Jiangsu known for its canals, classical gardens, silk, and local culture. We will also introduce each team member along with their career and skill development plan.</p>
+				<a href="#team" style="display:inline-block; margin-top:1rem; padding:0.8rem 1.1rem; background:#ffd98b; color:#571015; text-decoration:none;">Meet the team ↓</a>
+			</div>
+		</header>
+
+		<main>
+			<section class="section" id="team" aria-labelledby="team-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:var(--vermilion);">Assignment team</p>
+					<h2 id="team-title">Team members</h2>
+					<p>We are a three-person student team. This page presents our introduction to Suzhou, along with links to each member's personal pages.</p>
+				</div>
+				<div class="team-grid">
+					<article class="member-card">
+						<span class="member-number">01 · Member</span>
+						<h3>Aimen Munawar</h3>
+						<p class="student-id">SL26225005</p>
+						<a href="member-aimen.html" aria-label="Visit Aimen Munawar's personal homepage">Personal homepage ↗</a>
+					</article>
+					<article class="member-card">
+						<span class="member-number">02 · Member</span>
+						<h3>Muhammad Ekhtiaj Hasan</h3>
+						<p class="student-id">SL26225003</p>
+						<a href="member-ekhtiaj.html" aria-label="Visit MD Ekhtiaj Hasan's personal homepage">Personal homepage ↗</a>
+					</article>
+					<article class="member-card">
+						<span class="member-number">03 · Member</span>
+						<h3>Alyha Mahmood</h3>
+						<p class="student-id">SL26225004</p>
+						<a href="member-alyha.html" aria-label="Visit Alyha Mahmood's personal homepage">Personal homepage ↗</a>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="suzhou" aria-labelledby="suzhou-title">
+				<div class="suzhou-intro">
+					<article class="city-story">
+						<p class="eyebrow" style="color:var(--vermilion);">A city written in water</p>
+						<h2 id="suzhou-title">Suzhou, where gardens meet the Grand Canal</h2>
+						<p class="lead-letter">Suzhou sits in southeastern Jiangsu, west of Shanghai and beside Lake Tai. Its historic center is threaded with canals, stone bridges, whitewashed walls, and dark-tiled roofs. The city is both an ancient cultural landscape and a modern industrial center, so quiet garden courtyards can exist within reach of busy technology parks.</p>
+						<p>Its population is metropolitan in scale, yet its identity is intimate: neighborhoods are shaped by waterways, local markets, classical gardens, and a long tradition of craft. The famous <strong>Humble Administrator's Garden</strong> and Lingering Garden turn framed views, borrowed scenery, moon gates, and seasonal plants into a living form of composition.</p>
+						<p>Suzhou cuisine favors a gentle balance of sweetness and freshness. Visitors may encounter delicate <em>Su-style noodles</em>, freshwater fish from the Taihu region, crab dishes, and pastries associated with the city's tea-house culture. Silk embroidery, Kunqu opera, and the elegant local dialect add further layers to the city's cultural character.</p>
+					</article>
+					<aside aria-label="Suzhou quick facts">
+						<h3 style="color:var(--lacquer);">Suzhou in a few strokes</h3>
+						<ul class="fact-list">
+							<li><strong>Location:</strong> Jiangsu Province, eastern China</li>
+							<li><strong>Landscape:</strong> canals, lakes, gardens, and low historic lanes</li>
+							<li><strong>Culture:</strong> Kunqu opera, silk, embroidery, and classical gardens</li>
+							<li><strong>Flavor:</strong> Su-style noodles, Taihu freshwater foods, and tea pastries</li>
+							<li><strong>Atmosphere:</strong> serene, precise, layered, and quietly inventive</li>
+						</ul>
+					</aside>
+				</div>
+
+				<div class="gallery" aria-label="Suzhou image gallery">
+					<figure>
+						<a href="https://en.wikipedia.org/wiki/Pingjiang_Road" target="_blank" rel="noopener noreferrer">
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%B9%B3%E6%B1%9F%E8%B7%AF_(7439883548).jpg?width=1200" alt="Pingjiang Road canal and traditional houses in Suzhou">
+						</a>
+						<figcaption>Pingjiang Road: a real Suzhou canal lane, with white walls and waterside homes.</figcaption>
+					</figure>
+					<figure>
+						<a href="https://en.wikipedia.org/wiki/Shantang_Street" target="_blank" rel="noopener noreferrer">
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/2017-04-17_Shantang_River,_Suzhou_02.jpg?width=1000" alt="Shantang River and historic buildings in Suzhou">
+						</a>
+						<figcaption>Shantang Street: the historic canal district described as one of Suzhou's signature walks.</figcaption>
+					</figure>
+					<figure>
+						<a href="https://en.wikipedia.org/wiki/Humble_Administrator%27s_Garden" target="_blank" rel="noopener noreferrer">
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/2017-04-16_Humble_Administrator%27s_Garden_01.jpg?width=1000" alt="Humble Administrator's Garden in Suzhou">
+						</a>
+						<figcaption>Humble Administrator's Garden: water, rock, plants, and framed views in one composition.</figcaption>
+					</figure>
+					<figure>
+						<a href="https://en.wikipedia.org/wiki/Suzhou_Museum" target="_blank" rel="noopener noreferrer">
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E8%8B%8F%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86%C2%B7%E8%8B%8F%E5%B7%9E%C2%B7%E8%A5%BF%E5%8D%97%E5%90%91%E4%B8%9C%E5%8C%97.jpg?width=1200" alt="Suzhou Museum designed by I. M. Pei">
+						</a>
+						<figcaption>Suzhou Museum: I. M. Pei's dialogue between modern geometry and local garden traditions.</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section class="data-band" aria-labelledby="snapshot-title">
+				<div class="section">
+					<div class="section-heading">
+						<p class="eyebrow" style="color:#ffd98b;">A compact reference</p>
+						<h2 id="snapshot-title">A Suzhou snapshot</h2>
+					</div>
+					<div class="table-wrap">
+						<table>
+							<caption>Topics that shape our introduction</caption>
+							<thead>
+								<tr><th scope="col">Theme</th><th scope="col">What to notice</th><th scope="col">Why it matters</th></tr>
+							</thead>
+							<tbody>
+								<tr><th scope="row">Geography</th><td>Jiangsu, Lake Tai, and the Grand Canal</td><td>Water is infrastructure, scenery, and memory.</td></tr>
+								<tr><th scope="row">Built heritage</th><td>Classical gardens, bridges, lanes, and tiled roofs</td><td>Small transitions create a rich sense of scale.</td></tr>
+								<tr><th scope="row">Living culture</th><td>Kunqu, silk, embroidery, tea, and food traditions</td><td>Craft keeps history active rather than frozen.</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section class="section details-section" id="details" aria-labelledby="details-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:var(--vermilion);">Look closer</p>
+					<h2 id="details-title">Five ways to read Suzhou</h2>
+					<p>These connected topic cards expand the introduction with a little more context, so the city can be understood as a place, a community, a landscape, and a living culture.</p>
+				</div>
+				<div class="topic-grid">
+					<article class="topic-card">
+						<a href="https://en.wikipedia.org/wiki/Suzhou" target="_blank" rel="noopener noreferrer"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_panorama_of_Suzhou_and_the_Grand_Canal_that_runs_through_it.jpg?width=1000" alt="Aerial view of Suzhou and the Grand Canal"></a>
+						<div class="topic-copy"><span class="member-number">01 · Place</span><h3>Location</h3><p>Suzhou is in southeastern Jiangsu in the Yangtze River Delta, between Shanghai and Nanjing. Lake Tai lies to the southwest, while the Grand Canal and smaller waterways shape the historic city.</p><ul><li>Prefecture-level city in eastern China</li><li>Coordinates: about 31.3 N, 120.6 E</li><li>Known as a Jiangnan water town</li></ul><a href="https://en.wikipedia.org/wiki/Suzhou#Geography" target="_blank" rel="noopener noreferrer">Read the geography reference ↗</a></div>
+					</article>
+					<article class="topic-card">
+						<a href="https://en.wikipedia.org/wiki/Suzhou#Demographics" target="_blank" rel="noopener noreferrer"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A82.jpg?width=1000" alt="Suzhou skyline beside Jinji Lake"></a>
+						<div class="topic-copy"><span class="member-number">02 · People</span><h3>Demographics</h3><p>Suzhou is a large, fast-growing city with an urban core and a wider municipality that includes historic districts, lake communities, and county-level cities. Its population is predominantly Han Chinese.</p><ul><li>2020 prefecture-level population: about 12.75 million</li><li>Mandarin is used alongside Suzhounese, a Wu language</li><li>International communities reflect its industrial economy</li></ul><a href="https://en.wikipedia.org/wiki/Suzhou#Demographics" target="_blank" rel="noopener noreferrer">Explore the people and languages ↗</a></div>
+					</article>
+					<article class="topic-card">
+						<a href="https://whc.unesco.org/en/list/813/" target="_blank" rel="noopener noreferrer"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2017-04-16_Humble_Administrator%27s_Garden_01.jpg?width=1000" alt="Classical garden scenery in Suzhou"></a>
+						<div class="topic-copy"><span class="member-number">03 · Landscape</span><h3>Scenery</h3><p>Suzhou's scenery is designed around transitions: a bridge opens to a canal, a moon gate frames a tree, and a garden wall hides the next view. More than 60 classical gardens are associated with the city.</p><ul><li>Canals, stone bridges, lakes, and low historic lanes</li><li>Humble Administrator's Garden and Lingering Garden</li><li>Taihu stones create miniature mountain landscapes</li></ul><a href="https://whc.unesco.org/en/list/813/" target="_blank" rel="noopener noreferrer">See the UNESCO garden listing ↗</a></div>
+					</article>
+					<article class="topic-card">
+						<a href="https://en.wikipedia.org/wiki/Suzhou#Culture" target="_blank" rel="noopener noreferrer"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gu_embroidery.jpg?width=1000" alt="Suzhou embroidery representing local craft culture"></a>
+						<div class="topic-copy"><span class="member-number">04 · Heritage</span><h3>Culture</h3><p>Suzhou culture combines the refined arts of the Wu region with everyday craftsmanship. Silk, embroidery, gardens, poetry, and performance traditions are still visible in museums, workshops, and historic streets.</p><ul><li>Kunqu opera and Suzhou pingtan storytelling</li><li>Silk weaving, Song brocade, and embroidery</li><li>Gardens shaped by painting and scholarly taste</li></ul><a href="https://ich.unesco.org/en/RL/kun-qu-opera-00004" target="_blank" rel="noopener noreferrer">Learn about Kunqu opera ↗</a></div>
+					</article>
+					<article class="topic-card">
+						<a href="https://commons.wikimedia.org/wiki/Category:Food_in_Suzhou" target="_blank" rel="noopener noreferrer"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Squirrel_fish.jpg?width=1000" alt="Squirrel fish, a Suzhou-style dish"></a>
+						<div class="topic-copy"><span class="member-number">05 · Table</span><h3>Cuisine</h3><p>Su-style cooking is associated with balanced sweetness, delicate seasoning, careful knife work, and the freshwater ingredients of the surrounding lakes. Eating is part of the city's visual and seasonal culture.</p><ul><li>Squirrel fish, a signature sweet-and-sour preparation</li><li>Su-style noodles with light, aromatic broths</li><li>Yangcheng Lake hairy crab and Biluochun tea</li></ul><a href="https://commons.wikimedia.org/wiki/Category:Food_in_Suzhou" target="_blank" rel="noopener noreferrer">Browse Suzhou food references ↗</a></div>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="resources" aria-labelledby="resources-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:var(--vermilion);">Continue the journey</p>
+					<h2 id="resources-title">Explore further</h2>
+					<p>These references helped us frame Suzhou as both a destination and a layered cultural landscape.</p>
+				</div>
+				<div class="explore-grid">
+					<article class="resource-card">
+						<h3>Places and activities</h3>
+						<p>Use this guide for a practical route through gardens, canals, and historic highlights.</p>
+						<a href="https://thehappyjetlagger.com/en/things-to-do-in-suzhou/" target="_blank" rel="noopener noreferrer">Read the travel guide ↗</a>
+					</article>
+					<article class="resource-card">
+						<h3>History and geography</h3>
+						<p>Review a broad reference for Suzhou's location, history, economy, and cultural landmarks.</p>
+						<a href="https://en.wikipedia.org/wiki/Suzhou" target="_blank" rel="noopener noreferrer">Open the encyclopedia ↗</a>
+					</article>
+					<article class="resource-card">
+						<h3>Food and local color</h3>
+						<p>Find a visitor's perspective on city walks, food, and experiences across Suzhou.</p>
+						<a href="https://www.wanderplate.com/post/top-things-to-do-in-suzhou-city-jiangsu" target="_blank" rel="noopener noreferrer">See the itinerary ↗</a>
+					</article>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p>Made by Aimen, Ekhtiaj, and Alyha · <a href="#top">Back to top ↑</a></p>
+		</footer>
+	</div>
+</body>
+</html>

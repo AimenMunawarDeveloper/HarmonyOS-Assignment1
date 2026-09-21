@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Aimen Munawar career and skill development plan.">
+	<title>Aimen Munawar | Career Skill Page</title>
+	<link rel="stylesheet" href="aimen.css">
+	<style>
+		/* Embedded CSS required for the Career Skill Page. */
+		#career-intro { font-family: Georgia, "Times New Roman", serif; color: #dce9df; }
+		h2 { color: #164a46; }
+		div.skill-copy p { line-height: 1.75; }
+		.skill-page-hero { min-height: 100svh; height: 100svh; }
+		.skill-page-hero h1 { max-width: 720px; color: #fffaf2; font-size: clamp(2.1rem, 3.8vw, 3.7rem); }
+		.skill-page-hero .eyebrow { color: #f4d68c; }
+		.skill-section-title { color: #164a46; border-left: 6px solid #bd4738; padding-left: 0.8rem; }
+		.skill-card { animation: rise-in 700ms ease both; }
+		.skill-card:nth-child(2) { animation-delay: 120ms; }
+		.skill-card:nth-child(3) { animation-delay: 240ms; }
+		.skill-card:nth-child(4) { animation-delay: 360ms; }
+		.skill-bar span { animation: grow-bar 1200ms ease-out both; transform-origin: left; }
+		@keyframes rise-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+		@keyframes grow-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+		@media (prefers-reduced-motion: reduce) { .skill-card, .skill-bar span { animation: none; } }
+	</style>
+</head>
+<body>
+	<div class="site-shell">
+		<header class="hero skill-page-hero" id="top">
+			<nav class="site-nav" aria-label="Career page navigation">
+				<a class="brand-mark link" href="main.html">朱丹赤 · TEAM 01</a>
+				<ul>
+					<li><a class="link" href="main.html">Team page</a></li>
+					<li><a class="link" href="member-aimen.html">Homepage</a></li>
+					<li><a class="link" href="#hard-skills">Skills</a></li>
+					<li><a class="link" href="#plan">Development plan</a></li>
+				</ul>
+			</nav>
+			<div class="hero-content">
+				<p class="eyebrow">Career skill development page</p>
+				<h1>From frontend development to intelligent systems.</h1>
+				<p id="career-intro">I am Aimen Munawar, a frontend developer and USTC Master's student in Software Engineering. My goal is to combine software engineering, research, machine learning, and AI.</p>
+			</div>
+		</header>
+
+		<main>
+			<section class="section content" id="hard-skills" aria-labelledby="hard-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:#bd4738; font-size:0.85rem;">Technical abilities</p>
+					<h2 class="skill-section-title" id="hard-title">Hard skills</h2>
+					<p style="font-size:1.08rem; color:#52645e;">These technical and professional abilities are the foundation for building, testing, deploying, and researching scalable software products.</p>
+				</div>
+				<div class="career-grid">
+					<article class="info-panel skill-card"><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React logo"><h3>Frontend engineering</h3><p>React, Next.js, TypeScript, JavaScript, Tailwind CSS, responsive layouts, component architecture, accessibility, and translating Figma designs into usable interfaces.</p><div class="skill-bar" aria-label="Frontend engineering development level"><span style="width:92%; background:#bd4738;"></span></div><strong>Current focus: advanced interface quality</strong></article>
+					<article class="info-panel skill-card"><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js logo"><h3>Backend and APIs</h3><p>Node.js, Express.js, REST APIs, authentication, JWT, MongoDB Atlas, Cloudinary, AWS S3, third-party integrations, and secure data flows.</p><div class="skill-bar" aria-label="Backend and API development level"><span style="width:82%; background:#164a46;"></span></div><strong>Development goal: production-ready services</strong></article>
+					<article class="info-panel skill-card"><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo"><h3>Data, AI, and machine learning</h3><p>Python, pandas, NumPy, scikit-learn, PyTorch, spaCy, NLTK, sentence transformers, NLP pipelines, embeddings, clustering, and model evaluation.</p><div class="skill-bar" aria-label="AI and machine learning development level"><span style="width:58%; background:#c49a48;"></span></div><strong>Development goal: research-led AI integration</strong></article>
+					<article class="info-panel skill-card"><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo"><h3>Testing and deployment</h3><p>Jest, Supertest, React Testing Library, Playwright, Postman, Locust, Docker, Vercel, Google Cloud Run, monitoring, performance testing, and secure deployment practices.</p><div class="skill-bar" aria-label="Testing and deployment development level"><span style="width:78%; background:#d47755;"></span></div><strong>Development goal: reliable scalable releases</strong></article>
+				</div>
+			</section>
+
+			<section class="section content" id="soft-skills" aria-labelledby="soft-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:#bd4738;">Transferable abilities</p>
+					<h2 class="skill-section-title" id="soft-title">Soft skills</h2>
+					<p style="font-size:1.08rem; color:#52645e;">Technical knowledge becomes more useful when it is supported by communication, thoughtful collaboration, and the ability to understand real user needs.</p>
+				</div>
+				<div class="soft-grid">
+					<article class="hobby-card skill-card"><h3>Communication</h3><p>I explain technical decisions clearly to teammates, clients, and non-technical stakeholders through documentation, presentations, standups, and structured discussion.</p></article>
+					<article class="hobby-card skill-card"><h3>Problem-solving</h3><p>I break complex requirements into smaller tasks, investigate failures systematically, compare possible solutions, and use testing evidence before making decisions.</p></article>
+					<article class="hobby-card skill-card"><h3>Teamwork and leadership</h3><p>My internship and student-community experience developed my ability to coordinate work, contribute in sprints, support peers, and take responsibility for shared outcomes.</p></article>
+					<article class="hobby-card skill-card"><h3>Adaptability</h3><p>I learn new frameworks, APIs, cloud services, and AI tools when a project requires them, while keeping the product goal and user experience central.</p></article>
+				</div>
+			</section>
+
+			<section class="data-band" id="plan" aria-labelledby="plan-title">
+				<div class="section content">
+					<div class="section-heading">
+						<p class="eyebrow">Three-stage development plan</p>
+						<h2 id="plan-title">How I will reach my career goal</h2>
+						<p>My master's degree gives me an opportunity to connect software engineering practice with research and intelligent applications.</p>
+					</div>
+					<div class="plan-grid">
+						<article class="plan-card skill-card"><h3>Stage 1: Build stronger software foundations</h3><ul><li>Develop advanced React and Next.js applications with TypeScript.</li><li>Improve accessibility, performance, testing, security, and maintainable architecture.</li><li>Strengthen backend, databases, cloud deployment, observability, and API design.</li><li>Use portfolio projects to demonstrate measurable quality and scalability.</li></ul></article>
+						<article class="plan-card skill-card"><h3>Stage 2: Grow as a researcher at USTC</h3><ul><li>Study research methodology, statistics, academic writing, and experimental design.</li><li>Read and reproduce relevant papers in machine learning, NLP, and intelligent software systems.</li><li>Work with real datasets and report accuracy, limitations, ethics, and reproducibility.</li><li>Find a research topic connecting AI with accessible, usable web applications.</li></ul></article>
+						<article class="plan-card skill-card"><h3>Stage 3: Create intelligent scalable products</h3><ul><li>Build secure AI-enabled APIs and connect them to well-tested frontend experiences.</li><li>Learn model serving, vector search, evaluation, privacy, caching, monitoring, and cost control.</li><li>Develop products such as a research assistant, career platform, or cybersecurity learning system.</li><li>Measure user value, latency, reliability, accessibility, and responsible AI behaviour.</li></ul></article>
+					</div>
+				</div>
+			</section>
+
+			<section class="section content" aria-labelledby="evidence-title">
+				<div class="section-heading">
+					<p class="eyebrow" style="color:#bd4738;">Evidence from practice</p>
+					<h2 class="skill-section-title" id="evidence-title">Projects that demonstrate these skills</h2>
+				</div>
+				<div class="project-grid">
+					<article class="project-card"><h3>CyberShield</h3><p>Combines Next.js, TypeScript, dashboards, risk scoring, multilingual training, phishing simulations, and AI integrations to support cybersecurity awareness.</p></article>
+					<article class="project-card"><h3>Career-Conseiller</h3><p>Applies Gemini AI, Retell voice AI, resume parsing, skill-gap analysis, and personalized roadmaps to a full-stack career platform.</p></article>
+					<article class="project-card"><h3>Crime Script Analysis</h3><p>Uses NLP preprocessing, transformer embeddings, Doc2Vec, Jaccard similarity, graph clustering, TF-IDF, and temporal visualizations for scam report analysis.</p></article>
+					<article class="project-card"><h3>Craftsy and Vynx</h3><p>Demonstrate responsive React and Next.js interfaces, testing, Dockerized services, cloud deployment, inventory workflows, video storage, and monitoring.</p></article>
+				</div>
+				<div class="button-row" style="margin-top:2rem;">
+					<a class="link" href="member-aimen.html">Return to homepage ↗</a>
+					<a class="link" href="https://github.com/AimenMunawarDeveloper?tab=repositories" target="_blank" rel="noopener noreferrer">View GitHub projects ↗</a>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p style="color:#ffffff;">Aimen Munawar · SL26225005 · <a class="link" href="mailto:munaim16@mail.ustc.edu.cn">munaim16@mail.ustc.edu.cn</a> · <a class="link" href="#top">Back to top ↑</a></p>
+		</footer>
+	</div>
+</body>
+</html>
