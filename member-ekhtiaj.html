@@ -1,87 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Muhammad Ekhtiaj Hasan personal homepage.">
-	<title>Muhammad Ekhtiaj Hasan | Personal Homepage</title>
-	<link rel="stylesheet" href="ekhtiaj.css">
-	<style>
-		#bio-text { font-family: "Trebuchet MS", Arial, sans-serif; }
-		h2 { color: #123f52; }
-		div.profile-copy p { line-height: 1.85; }
-		.profile-copy h3 { color: #c76b4b; }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Ekhtiaj Hasan | Profile</title>
+    <link rel="stylesheet" href="ekhtiaj.css">
+    <style>
+        #bio-text {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+        h2 {
+            color: #121816;
+        }
+        div.content p {
+            line-height: 1.8;
+        }
+    </style>
 </head>
-<body>
-	<header class="site-header" id="top">
-		<nav class="site-nav" aria-label="Personal page navigation">
-			<a class="brand-mark link" href="main.html">朱丹赤 · TEAM 01</a>
-			<ul>
-				<li><a class="link" href="main.html">Suzhou page</a></li>
-				<li><a class="link" href="#profile">Profile</a></li>
-				<li><a class="link" href="#interests">Interests</a></li>
-				<li><a class="link" href="career-ekhtiaj.html">Career plan</a></li>
-			</ul>
-		</nav>
-		<div class="header-content">
-			<p class="eyebrow">Individual homepage · SL26225003</p>
-			<h1>Muhammad<br>Ekhtiaj Hasan</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This page is a temporary introduction to my background, interests, and direction as a student and future technology professional.</p>
-		</div>
-	</header>
+<body id="top">
+    <nav class="navbar">
+        <a href="main.html" class="brand">朱丹赤 <span>· TEAM 01</span></a>
+        <div class="nav-links">
+            <a href="main.html" class="link">Team</a>
+            <a href="member-ekhtiaj.html" class="link active">Profile</a>
+            <a href="career-ekhtiaj.html" class="link">Career</a>
+        </div>
+    </nav>
+    <main>
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Software Engineering · USTC</p>
+                <h1>Md Ekhtiaj<br>Hasan</h1>
+                <div class="meta-row">
+                    <span>
+                        <strong>Student ID</strong>
+                        SL26225003
+                    </span>
+                    <span>
+                        <strong>Focus</strong>
+                        Machine Learning
+                    </span>
+                </div>
+                <div class="cta-row">
+                    <a href="mailto:ekhtiajhasan@qq.com" class="btn btn-primary">
+                        ekhtiajhasan@qq.com
+                        <span>↗</span>
+                    </a>
+                    <a href="career-ekhtiaj.html" class="btn btn-ghost">
+                        Career skills
+                    </a>
+                    <a href="main.html" class="btn btn-ghost">
+                        Team page
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img
+                    src="Md Ekhtiaj Hasan Image.jpg"
+                    alt="Portrait of Md Ekhtiaj Hasan">
+            </div>
+        </header>
+        <!-- ABOUT -->
+        <section class="section">
+            <div class="section-head">
+                <span class="section-index">01</span>
+                <div>
+                    <p class="section-label">Personal profile</p>
+                    <h2>About Me</h2>
+                </div>
+            </div>
 
-	<main>
-		<section class="section page-width" id="profile" aria-labelledby="profile-title">
-			<div class="section-title"><p class="eyebrow">01 / Personal introduction</p><h2 id="profile-title">A life in progress</h2></div>
-			<div class="profile-spread">
-				<div>
-					<img class="profile-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="Portrait placeholder for Muhammad Ekhtiaj Hasan">
-					<p style="margin-top:1rem; font-size:0.9rem;">Portrait placeholder · replace with Ekhtiaj's photo</p>
-				</div>
-				<div class="profile-copy">
-					<h3>A short introduction</h3>
-					<p id="bio-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae neque at nibh commodo pellentesque. Praesent consequat, lorem non fermentum tincidunt, arcu risus tincidunt justo, vitae aliquam ipsum lectus a nulla. I am interested in understanding how people, systems, and digital products connect.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at cursus posuere, nibh sem facilisis lectus, sed tincidunt lacus sapien in lectus. My current academic experience is helping me develop curiosity, discipline, and a practical approach to solving problems.</p>
-					<div class="profile-facts">
-						<p><strong>Full name</strong> Muhammad Ekhtiaj Hasan</p>
-						<p><strong>Student ID</strong> SL26225003</p>
-						<p><strong>Background</strong> Lorem ipsum dolor sit amet, student and technology enthusiast.</p>
-						<p><strong>Email</strong> <a class="link" href="mailto:ekhtiaj@example.com">ekhtiaj@example.com</a></p>
-					</div>
-					<div class="button-row">
-						<a class="link" href="main.html">Team page ↗</a>
-						<a class="link" href="career-ekhtiaj.html">Career Skill Page ↗</a>
-						<a class="link" href="#interests">Continue reading ↓</a>
-					</div>
-				</div>
-			</div>
-		</section>
+            <div class="content about-layout">
+                <div id="bio-text">
+                    <p>
+                        I am currently pursuing a Master's degree in Electronic 
+                        Information, specializing in Software Engineering, at the
+                        University of Science and Technology of China (USTC).
+                    </p>
+                    <p>
+                        My academic journey began with a Bachelor's degree
+                        in Computer Science and Technology at Nanjing
+                        University of Posts and Telecommunications. During
+                        that time, I built a strong foundation in programming,
+                        algorithms, data structures, software development,
+                        and problem solving.
+                    </p>
+                    <p>
+                        As I explored different areas of Computer Science,
+                        I became increasingly interested in how computers
+                        can learn from data and how algorithms can solve
+                        problems that are difficult to handle through
+                        traditional programming alone.
+                    </p>
+                    <p>
+                        This interest gradually led me toward Machine
+                        Learning. My master's study at USTC is now the next
+                        stage of that journey, where I am strengthening my
+                        existing foundation and developing more specialized
+                        knowledge in Machine Learning and related areas.
+                    </p>
+                </div>
 
-		<section class="section page-width" id="interests" aria-labelledby="interests-title">
-			<div class="section-title"><p class="eyebrow">02 / Outside the classroom</p><h2 id="interests-title">Things that keep me curious</h2></div>
-			<div class="columns">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a arcu sed nulla suscipit faucibus. In free time, I enjoy exploring stories, places, music, and ideas that help me see ordinary experiences from a different angle.</p>
-				<p>Morbi facilisis, est at pharetra efficitur, justo turpis malesuada ipsum, eget feugiat justo nisl quis erat. I am also interested in digital tools and the way thoughtful design can make information easier to understand.</p>
-				<p>Donec blandit, purus non vulputate blandit, ligula mi maximus metus, in dictum massa enim sit amet est. Walking, reading, and learning new concepts give me space to reflect and return to study with fresh attention.</p>
-			</div>
-			<ul class="rule-list" style="margin-top:2.5rem;">
-				<li><span>01</span><div><strong>Exploration</strong><br>Lorem ipsum dolor sit amet, discovering places and perspectives.</div></li>
-				<li><span>02</span><div><strong>Creative practice</strong><br>Lorem ipsum dolor sit amet, experimenting with visuals, writing, and technology.</div></li>
-				<li><span>03</span><div><strong>Connection</strong><br>Lorem ipsum dolor sit amet, learning through conversations and collaboration.</div></li>
-			</ul>
-		</section>
+                <aside class="facts">
+                    <div class="fact">
+                        <span class="fact-num">01</span>
+                        <div>
+                            <small>Undergraduate</small>
+                            <strong>NJUPT</strong>
+                            <p>Computer Science &amp; Technology</p>
+                        </div>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-num">02</span>
+                        <div>
+                            <small>Currently</small>
+                            <strong>USTC</strong>
+                            <p>Software Engineering · Master's</p>
+                        </div>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-num">03</span>
+                        <div>
+                            <small>Career direction</small>
+                            <strong>Machine Learning</strong>
+                            <p>Models · Data · Intelligent systems</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
 
-		<section class="quote-band" aria-label="Personal outlook">
-			<div class="page-width"><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Progress begins with a willingness to keep asking better questions.”</p></div>
-		</section>
+        <!-- INTERESTS -->
+        <section class="section">
+            <div class="section-head">
+                <span class="section-index">02</span>
+                <div>
+                    <p class="section-label">Outside the classroom</p>
+                    <h2>Things I enjoy</h2>
+                </div>
+            </div>
 
-		<section class="section page-width" aria-labelledby="direction-title">
-			<div class="section-title"><p class="eyebrow">03 / Looking ahead</p><h2 id="direction-title">A practical direction</h2></div>
-			<p style="max-width:720px; font-size:1.15rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. My career skill development plan connects a strong technical foundation with communication, research, and responsible problem-solving. The full plan is available on the Career Skill Page.</p>
-			<div class="button-row"><a class="link" href="career-ekhtiaj.html">Read the complete development plan ↗</a></div>
-		</section>
-	</main>
-	<footer><p>Muhammad Ekhtiaj Hasan · SL26225003 · <a class="link" href="mailto:ekhtiaj@example.com">ekhtiaj@example.com</a> · <a class="link" href="#top">Back to top ↑</a></p></footer>
+            <div class="interest-band">
+                <article class="interest">
+                    <div class="interest-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=85"
+                            alt="People enjoying outdoor sports">
+                        <span>01</span>
+                    </div>
+                    <div>
+                        <h3>Sports</h3>
+                        <p>
+                            Football, cricket, badminton and chess are some
+                            of the activities I enjoy. They give me a good
+                            balance between academic work and everyday life.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="interest">
+                    <div class="interest-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=85"
+                            alt="Traveller exploring a new destination">
+                        <span>02</span>
+                    </div>
+                    <div>
+                        <h3>Travel &amp; Exploration</h3>
+                        <p>
+                            I enjoy exploring new places, experiencing
+                            different environments and learning from
+                            different cultures and people.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="interest">
+                    <div class="interest-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=85"
+                            alt="Cinema screen showing a film">
+                        <span>03</span>
+                    </div>
+                    <div>
+                        <h3>Contents</h3>
+                        <p>
+                            I enjoy documentaries, films, sports news,
+                            global affairs, stand-up comedy and content
+                            that gives me something interesting to think about.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CAREER DEVELOPMENT PLAN -->
+        <section class="plan-band">
+            <div class="section">
+                <div class="section-head">
+                    <span class="section-index">03</span>
+                    <div>
+                        <p class="section-label">Career development plan</p>
+                        <h2>Building toward<br>Machine Learning</h2>
+                    </div>
+                </div>
+
+                <div class="plan-intro content">
+                    <p>
+                        I want to build my professional career around
+                        Machine Learning, with a particular interest in
+                        developing models and data-driven systems that
+                        solve practical problems.
+                    </p>
+                    <p>
+                        Rather than learning isolated algorithms, my goal
+                        is to understand the complete process: preparing
+                        data, selecting models, training and evaluating
+                        them, understanding why they work, and eventually
+                        turning them into useful applications.
+                    </p>
+                </div>
+
+                <div class="roadmap">
+                    <div class="roadmap-step">
+                        <small>Foundation</small>
+                        <h3>Computer Science</h3>
+                        <p>Programming · Algorithms · Data Structures</p>
+                    </div>
+                    <div class="roadmap-step is-current">
+                        <small>Current direction</small>
+                        <h3>Machine Learning</h3>
+                        <p>Data · Classical ML · Model Evaluation</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <small>Next stage</small>
+                        <h3>Deep Learning &amp; NLP</h3>
+                        <p>Neural Networks · NLP · Transformers</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <small>Long-term goal</small>
+                        <h3>ML Professional</h3>
+                        <p>Intelligent models · Real-world systems</p>
+                    </div>
+                </div>
+
+                <div class="plan-cta">
+                    <a href="career-ekhtiaj.html" class="btn btn-primary">
+                        View technical &amp; soft skills
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="#top" class="footer-top">Back to top ↑</a>
+    </footer>
+
 </body>
 </html>
